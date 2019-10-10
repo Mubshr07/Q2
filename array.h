@@ -6,7 +6,7 @@ class Array
 {
 private:
     int *intPtrArray;
-    int intArray;
+    int arraylength = 0;
 
 public:
     Array();
@@ -24,7 +24,7 @@ public:
     int *subArrPointer(int pos);
     void push_back(int a);
     int pop_back();
-    int inset(int index, int val);
+    int insert(int index, int val);
     int erase(int index, int val);
     void size();
     int length();
@@ -36,7 +36,7 @@ public:
     void display();
     bool isEmpty();
     Array find(int i); // return the indexes of integer searched in the array
-    bool equal(Array);
+    bool equal(Array arr);
     int sort();
     void reverse();
 
