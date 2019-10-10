@@ -1,4 +1,4 @@
-#include "array.h"
+#include "q2.h"
 
 #include<iostream>
 #include<conio.h>
@@ -34,7 +34,7 @@ Array::Array(int *arr, int size)
 }
 Array::Array(const Array &)
 {
-    arraylength = 0;
+    //arraylength = 0;
     //intPtrArray = new int(arr);
 }
 Array::~Array()
@@ -66,10 +66,10 @@ Array Array::subArr(int pos, int siz)
     for (int i=0, j=pos-1; i<siz; i++, j++) {
         if(j < arraylength)
         {
-         subptr[i]= intPtrArray[j];
+            subptr[i]= intPtrArray[j];
         }
         else {
-           subptr[i] = 0;
+            subptr[i] = 0;
         }
     }
     return Array(subptr, siz);
@@ -86,10 +86,10 @@ int * Array::subArrPointer(int pos, int siz)
     for (int i=0, j=pos-1; i<siz; i++, j++) {
         if(j < arraylength)
         {
-         subptr[i]= intPtrArray[j];
+            subptr[i]= intPtrArray[j];
         }
         else {
-           subptr[i] = 0;
+            subptr[i] = 0;
         }
     }
     return subptr;
@@ -100,7 +100,7 @@ int * Array::subArrPointer(int pos)
     int siz = arraylength - pos;
     int *subptr  = new int[siz];
     for (int i=0, j=pos-1; i<siz; i++, j++) {
-         subptr[i]= intPtrArray[j];
+        subptr[i]= intPtrArray[j];
     }
     return subptr;
 }
@@ -108,13 +108,14 @@ int * Array::subArrPointer(int pos)
 void Array::push_back(int a)
 {
     arraylength++;
-    intPtrArray[arraylength] = a;
+    intPtrArray[arraylength-1] = a;
 }
 
 int Array::pop_back()
 {
-    int last = intPtrArray[arraylength];
+    int last = intPtrArray[arraylength-1];
     arraylength--;
+    return  last;
 }
 
 int Array::insert(int index, int val)
@@ -183,7 +184,7 @@ void Array::assign(int index, int val)
 {
     if(index < arraylength)
     {
-        intPtrArray[index] = val;
+        intPtrArray[index-1] = val;
     }
 }
 
@@ -205,8 +206,7 @@ void Array::copy(const int * arr, int siz)
 
 void Array::display()
 {
-    cout<<"\n\n\t Display function of the Array Class\n";
-    cout<<"*******************************************************\n";
+
     cout<<"\t\t Total length  :  "<<arraylength;
     cout<<"\n";
     for (int i=0;i<arraylength;i++) {
@@ -231,7 +231,7 @@ Array Array::find(int i)
     for (int index = 0; index<arraylength; index++) {
         if(intPtrArray[index] == i)
         {
-            farray.push_back(index);
+            farray.push_back(index+1);
         }
     }
     int ll = (int) farray.size();
@@ -268,10 +268,37 @@ bool Array::equal(Array arr)
 int Array::sort()
 {
 
+    int i, j;
+    for (i = 0; i < arraylength-1; i++)
+    {
+        for (j = 0; j < arraylength-i-1; j++)
+        {
+            if (intPtrArray[j] > intPtrArray[j+1])
+            {
+                swap(&intPtrArray[j], &intPtrArray[j+1]);
+            }
+        }
+    }
+}
+
+void Array::swap(int *xp, int *yp)
+{
+    int temp = *xp;
+        *xp = *yp;
+        *yp = temp;
 }
 
 void Array::reverse()
 {
-
+    int start =0;
+    int end = arraylength-1;
+    while (start < end)
+        {
+            int temp = intPtrArray[start];
+            intPtrArray[start] = intPtrArray[end];
+            intPtrArray[end] = temp;
+            start++;
+            end--;
+        }
 }
 

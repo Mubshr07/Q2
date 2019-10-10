@@ -40,6 +40,9 @@ public:
     int sort();
     void reverse();
 
+    //
+    void swap(int *xp, int *yp) ;
+
 
 
 };

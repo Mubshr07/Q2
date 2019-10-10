@@ -5,7 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    array.cpp
+    q2.cpp
 
 HEADERS += \
-    array.h
+    q2.h
