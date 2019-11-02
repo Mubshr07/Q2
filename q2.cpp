@@ -24,6 +24,7 @@ Array::Array(int size)
         intPtrArray[i] = 0;
     }
 }
+
 Array::Array(int *arr, int size)
 {
     arraylength = size;
@@ -32,6 +33,7 @@ Array::Array(int *arr, int size)
         intPtrArray[i] = arr[i];
     }
 }
+
 Array::Array(const Array &)
 {
     //arraylength = 0;
