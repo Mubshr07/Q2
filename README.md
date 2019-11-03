@@ -1,11 +1,11 @@
-<b>A C++ console App developed in Qt: Solution of this question
+## A C++ console App developed in Qt: Solution of this question
 
 
-Implementation of Array Class:
+# Implementation of Array Class:
 
-Your goal is to implement a generic "Array" class using cstring. Please also write down the test code to drive your class implementation.
-
- class Array {
+> Your goal is to implement a generic "Array" class using cstring. Please also write down the test code to drive your class implementation.
+```
+  ** * class Array { ** *
 	//some private data members
 	
 	public:
@@ -38,5 +38,6 @@ Your goal is to implement a generic "Array" class using cstring. Please also wri
 		27.	void reverse(); // reverses the contents of the array
 		28.	~Array(); //destructor..
 		
-		}
- }</b>
+	
+ ** * } ** *
+ ```
