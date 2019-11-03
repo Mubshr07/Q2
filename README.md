@@ -5,7 +5,7 @@
 
 > Your goal is to implement a generic "Array" class using cstring. Please also write down the test code to drive your class implementation.
 ```
-  ** * class Array { ** *
+   class Array { 
 	//some private data members
 	
 	public:
@@ -39,5 +39,5 @@
 		28.	~Array(); //destructor..
 		
 	
- ** * } ** *
+   } 
  ```
